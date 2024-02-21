@@ -44,9 +44,23 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
-        questionNumber += 1
-        updateQuestion()
         let answer = sender.currentTitle
+        let correctAnswer = questions[questionNumber][1]
+        
+        if answer == correctAnswer {
+            print("Right!")
+        } else {
+            print("Wrong!")
+        }
+        
+        if questionNumber < (questions.count-1) {
+            questionNumber += 1
+        } else {
+            print("The game is end.")
+            questionNumber = 0
+        }
+        
+        updateQuestion()
     }
     
     
