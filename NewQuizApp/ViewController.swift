@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         buttonTrueSetup()
         buttonFalseSetup()
         progressBarSetup()
-        
     }
 
     
@@ -69,6 +68,7 @@ class ViewController: UIViewController {
         questionLabel.text = questions[questionNumber].text
         buttonTrue.backgroundColor = .clear
         buttonFalse.backgroundColor = .clear
+        progressBar.progress = Float(questionNumber + 1) / Float(questions.count)
     }
     
     private func setupLabel() {
