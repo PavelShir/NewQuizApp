@@ -20,8 +20,17 @@
                             <stackView opaque="NO" contentMode="bottom" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-g4-bsT">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-Gb-V18">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9dW-Bd-1nj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCH-XQ-Tct">
-                                        <rect key="frame" x="20" y="0.0" width="353" height="589"/>
+                                        <rect key="frame" x="20" y="70" width="353" height="519"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,10 +72,12 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ghQ-VB-f0H" secondAttribute="trailing" constant="20" id="11A-K2-csZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="jtd-Gb-V18" secondAttribute="trailing" constant="20" id="7AP-Gw-iWc"/>
                                     <constraint firstItem="I1Q-wG-lFv" firstAttribute="leading" secondItem="4ci-g4-bsT" secondAttribute="leading" constant="20" id="8zU-IO-05d"/>
                                     <constraint firstItem="XCH-XQ-Tct" firstAttribute="leading" secondItem="4ci-g4-bsT" secondAttribute="leading" constant="20" id="JEV-wk-8rf"/>
                                     <constraint firstAttribute="trailing" secondItem="XCH-XQ-Tct" secondAttribute="trailing" constant="20" id="Xah-Lh-CNe"/>
                                     <constraint firstAttribute="trailing" secondItem="YBb-ha-iW7" secondAttribute="trailing" constant="20" id="Xpt-mZ-wUa"/>
+                                    <constraint firstItem="jtd-Gb-V18" firstAttribute="leading" secondItem="4ci-g4-bsT" secondAttribute="leading" constant="20" id="cYl-mt-cpf"/>
                                     <constraint firstAttribute="trailing" secondItem="I1Q-wG-lFv" secondAttribute="trailing" constant="20" id="i1b-wk-NHU"/>
                                     <constraint firstItem="ghQ-VB-f0H" firstAttribute="leading" secondItem="4ci-g4-bsT" secondAttribute="leading" constant="20" id="m0p-Uw-37N"/>
                                     <constraint firstItem="YBb-ha-iW7" firstAttribute="leading" secondItem="4ci-g4-bsT" secondAttribute="leading" constant="20" id="uVQ-nC-rqf"/>
@@ -87,6 +98,7 @@
                         <outlet property="buttonTrue" destination="ghQ-VB-f0H" id="ZNJ-cX-Ip7"/>
                         <outlet property="progressBar" destination="YBb-ha-iW7" id="hlX-6c-5Fe"/>
                         <outlet property="questionLabel" destination="XCH-XQ-Tct" id="wdf-HP-djs"/>
+                        <outlet property="scoreLabel" destination="jtd-Gb-V18" id="FEC-f3-zum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

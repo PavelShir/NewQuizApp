@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct QuizBrain {
     
@@ -25,9 +26,11 @@ struct QuizBrain {
     ]
     
     var questionNumber = 0
+    var score = 0
     
-    func checkAnswer(_ answer: String) -> Bool {
+    mutating func checkAnswer(_ answer: String) -> Bool {
         if answer == questions[questionNumber].answer {
+            score += 1
             return true
         } else {
             return false
@@ -49,6 +52,15 @@ struct QuizBrain {
         } else {
             print("The game is end.")
             questionNumber = 0
+            score = 0
+            showAlert()
         }
     }
+    
+    func getScore() -> Int {
+        return score
+    }
+    
 }
+
+

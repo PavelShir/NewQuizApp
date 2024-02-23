@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     var quizBrain = QuizBrain()
     
+    @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var buttonTrue: UIButton!
     @IBOutlet var buttonFalse: UIButton!
     @IBOutlet var questionLabel: UILabel!
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         buttonTrueSetup()
         buttonFalseSetup()
         progressBarSetup()
+        setupScoreLabel()
     }
 
     
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
         questionLabel.text = quizBrain.getQuestionText()
         buttonTrue.backgroundColor = .clear
         buttonFalse.backgroundColor = .clear
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
         progressBar.progress = quizBrain.getProgress()
     }
     
@@ -53,6 +56,12 @@ class ViewController: UIViewController {
         questionLabel.textColor = .systemYellow
         questionLabel.font = .systemFont(ofSize: 25)
         questionLabel.numberOfLines = .max
+    }
+    
+    private func setupScoreLabel() {
+        scoreLabel.textColor = .white
+        scoreLabel.font = .systemFont(ofSize: 20)
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
     }
     
     private func buttonTrueSetup() {
@@ -73,5 +82,6 @@ class ViewController: UIViewController {
         progressBar.progressViewStyle = .bar
         progressBar.progressTintColor = .systemPink
     }
+    
 }
 
