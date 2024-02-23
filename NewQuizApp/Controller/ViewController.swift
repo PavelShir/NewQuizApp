@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let quizBrain = QuizBrain()
+    var quizBrain = QuizBrain()
     
     @IBOutlet var buttonTrue: UIButton!
     @IBOutlet var buttonFalse: UIButton!
@@ -36,22 +36,17 @@ class ViewController: UIViewController {
             sender.backgroundColor = .systemRed
         }
         
-        if questionNumber < (questions.count-1) {
-            questionNumber += 1
-        } else {
-            print("The game is end.")
-            questionNumber = 0
-        }
+        quizBrain.nextQuestion()
         
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
         
     }
     
     @objc private func updateQuestion() {
-        questionLabel.text = quizBrain.getQuestionText(0)
+        questionLabel.text = quizBrain.getQuestionText()
         buttonTrue.backgroundColor = .clear
         buttonFalse.backgroundColor = .clear
-        progressBar.progress = quizBrain.getProgress(0)
+        progressBar.progress = quizBrain.getProgress()
     }
     
     private func setupLabel() {
